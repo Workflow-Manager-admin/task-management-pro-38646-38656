@@ -1,0 +1,45 @@
+.todoItem {
+  background: var(--color-ffffff);
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.13);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  min-height: 82px;
+  margin-bottom: 8px;
+  outline: none;
+}
+.todoTitleBlock {
+  display: flex;
+  flex-direction: column;
+}
+.todoTitle {
+  font-size: var(--font-size-typo-9);
+  color: var(--color-typo-9);
+  font-weight: var(--font-weight-typo-9);
+  line-height: var(--line-height-typo-9);
+}
+.todoSubtitle {
+  font-size: var(--font-size-typo-10);
+  color: var(--color-typo-10);
+  line-height: var(--line-height-typo-10);
+}
+.todoActions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+.todoActionBtn {
+  width: 25px;
+  height: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.todoActionBtn img {
+  width: 100%;
+  height: 100%;
+}

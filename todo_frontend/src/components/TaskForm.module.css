@@ -1,0 +1,70 @@
+.form {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 386px;
+  margin: 0 auto 48px auto;
+}
+
+.label {
+  font-size: var(--font-size-typo-11);
+  color: var(--color-typo-11);
+  margin-bottom: 2px;
+}
+.textInput, .detailInput {
+  border: none;
+  border-bottom: 1px solid var(--color-8b8787);
+  background: transparent;
+  font-size: var(--font-size-typo-11);
+  color: var(--color-000000);
+  margin-bottom: 16px;
+  outline: none;
+  width: 100%;
+  padding: 4px 0;
+}
+.buttonsRow {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.submitBtn {
+  border: none;
+  border-radius: 15px;
+  font-size: var(--font-size-typo-12);
+  font-weight: var(--font-weight-typo-12);
+  color: var(--color-typo-12);
+  background: var(--color-9395d3);
+  padding: 16px 0;
+  width: 170px;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.13);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.submitBtn:active,
+.submitBtn:focus {
+  background: var(--color-d6d7ef);
+  color: var(--color-000000);
+}
+
+.cancelBtn {
+  border: none;
+  border-radius: 15px;
+  font-size: var(--font-size-typo-13);
+  font-weight: var(--font-weight-typo-13);
+  color: var(--color-ffffff);
+  background: var(--color-8b8787);
+  padding: 16px 0;
+  width: 170px;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.13);
+  cursor: pointer;
+  margin-left: 16px;
+  transition: background 0.2s;
+}
+.cancelBtn:active,
+.cancelBtn:focus {
+  background: var(--color-d6d7ef);
+  color: var(--color-000000);
+}

@@ -1,0 +1,134 @@
+:root {
+  /* Color tokens */
+  --color-ffffff: #ffffff;
+  --color-d6d7ef: #d6d7ef;
+  --color-9395d3: #9395d3;
+  --color-8b8787: #8b8787;
+  --color-000000: #000000;
+  --color-d1d1d6: #d1d1d6;
+  --color-ebebf5: #ebebf5;
+  --color-34c759: #34c759;
+  --color-ffd60a: #ffd60a;
+  --color-b3b7ee: #b3b7ee;
+
+  /* Typography tokens (Jost font assumed loaded elsewhere) */
+  --font-jost: 'Jost', 'Arial', sans-serif;
+
+  --font-typo-6: var(--font-jost);
+  --font-size-typo-6: 10px;
+  --font-weight-typo-6: 400;
+  --line-height-typo-6: 14.45px;
+  --color-typo-6: var(--color-9395d3);
+
+  --font-typo-7: var(--font-jost);
+  --font-size-typo-7: 10px;
+  --font-weight-typo-7: 400;
+  --line-height-typo-7: 14.45px;
+  --color-typo-7: var(--color-8b8787);
+
+  --font-typo-8: var(--font-jost);
+  --font-size-typo-8: 24px;
+  --font-weight-typo-8: 600;
+  --line-height-typo-8: 34.68px;
+  --color-typo-8: var(--color-ffffff);
+
+  --font-typo-9: var(--font-jost);
+  --font-size-typo-9: 13px;
+  --font-weight-typo-9: 600;
+  --line-height-typo-9: 18.785px;
+  --color-typo-9: var(--color-9395d3);
+
+  --font-typo-10: var(--font-jost);
+  --font-size-typo-10: 10px;
+  --font-weight-typo-10: 400;
+  --line-height-typo-10: 14.45px;
+  --color-typo-10: var(--color-000000);
+
+  --font-typo-11: var(--font-jost);
+  --font-size-typo-11: 16px;
+  --font-weight-typo-11: 400;
+  --line-height-typo-11: 23.12px;
+  --color-typo-11: var(--color-8b8787);
+
+  --font-typo-12: var(--font-jost);
+  --font-size-typo-12: 20px;
+  --font-weight-typo-12: 600;
+  --line-height-typo-12: 28.9px;
+  --color-typo-12: var(--color-ffffff);
+
+  --font-typo-13: var(--font-jost);
+  --font-size-typo-13: 15px;
+  --font-weight-typo-13: 400;
+  --line-height-typo-13: 21.675px;
+  --color-typo-13: var(--color-ffffff);
+
+  /* Spacing tokens (sample selection from design system) */
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 32px;
+  --spacing-xl: 64px;
+
+  /* Border radius */
+  --radius-s: 1px;
+  --radius-m: 15px;
+  --radius-l: 20px;
+
+  /* Shadow */
+  --shadow-0: 0 4px 4px 0 rgba(0,0,0,0.13);
+
+  /* Layout tokens */
+  --container-max-width: 414px;
+}
+
+/* ...rest of todo-ui.css unchanged (see assets/todo-ui.css)... */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-ffffff);
+  font-family: var(--font-jost);
+  min-height: 100vh;
+}
+.screen-frame {
+  max-width: var(--container-max-width);
+  min-height: 896px;
+  margin: 0 auto;
+  background: var(--color-ffffff);
+  position: relative;
+  box-shadow: var(--shadow-0);
+}
+/* HEADER / APPBAR */
+.appBar {
+  background: var(--color-9395d3);
+  width: 100%;
+  height: 118px;
+  border-radius: 0 0 var(--radius-m) var(--radius-m);
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+.appBar-title {
+  color: var(--color-typo-8);
+  font-size: var(--font-size-typo-8);
+  font-weight: var(--font-weight-typo-8);
+  line-height: var(--line-height-typo-8);
+  margin-left: var(--spacing-m);
+  margin-top: var(--spacing-m);
+}
+.appBar-calendar {
+  position: absolute;
+  right: var(--spacing-m);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.turn-back-btn {
+  position: absolute;
+  left: var(--spacing-m);
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+/* ...and so on (content is verbatim from assets/todo-ui.css)... */

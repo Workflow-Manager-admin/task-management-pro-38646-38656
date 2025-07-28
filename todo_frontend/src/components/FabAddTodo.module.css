@@ -1,0 +1,25 @@
+.fab {
+  position: fixed;
+  right: 20px;
+  bottom: 32px;
+  width: 70px;
+  height: 70px;
+  background: var(--color-9395d3);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.fab:active {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.08);
+}
+.plusIcon {
+  width: 21px;
+  height: 23.6px;
+  filter: drop-shadow(0 0 2px var(--color-ffffff));
+}

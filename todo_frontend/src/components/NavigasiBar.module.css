@@ -1,0 +1,34 @@
+.navigasiBar {
+  width: 100%;
+  height: 68px;
+  background: var(--color-ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 15px 15px 0 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.13);
+  z-index: 50;
+  margin-bottom: 0;
+}
+.tab {
+  font-size: var(--font-size-typo-6);
+  color: var(--color-typo-6);
+  font-weight: var(--font-weight-typo-6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 16px;
+  outline: none;
+  transition: color 0.15s;
+}
+.tab.completed {
+  color: var(--color-typo-7);
+}
+.active {
+  text-decoration: underline;
+  font-weight: 600;
+}
