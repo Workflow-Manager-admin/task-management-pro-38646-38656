@@ -138,20 +138,33 @@ function MainContent({ theme, setTheme, tasks, setTasks, filter, setFilter }) {
   return (
     <div className="App" style={{ minHeight: "100vh", background: "var(--color-ffffff)" }}>
       <StatusBar />
-      <AppBar
-        title={appBarTitle}
-        showBack={isAdd || isEdit || isCompleted}
-        onBack={()=>navigate(-1)}
-        rightIcon={
-          (!isAdd && !isEdit && !isCompleted) &&
-          <img
-            src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/40c83010-6203-4ae0-ab3c-786d068b8495"
-            width={32}
-            height={32}
-            alt="Calendar"
-          />
-        }
-      />
+      {/* Match AppBar width and centering to .todos-list/main container */}
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "414px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          boxSizing: "border-box",
+          paddingLeft: 0,
+          paddingRight: 0,
+        }}
+      >
+        <AppBar
+          title={appBarTitle}
+          showBack={isAdd || isEdit || isCompleted}
+          onBack={()=>navigate(-1)}
+          rightIcon={
+            (!isAdd && !isEdit && !isCompleted) &&
+            <img
+              src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/40c83010-6203-4ae0-ab3c-786d068b8495"
+              width={32}
+              height={32}
+              alt="Calendar"
+            />
+          }
+        />
+      </div>
       <button
         className="theme-toggle"
         style={{ position: "absolute", top: 20, right: 80, zIndex: 500 }}

@@ -1,3 +1,4 @@
+/* --- Updated for width & alignment matching the task list container --- */
 .appBar {
   background: var(--color-9395d3);
   width: 100%;
@@ -8,14 +9,32 @@
   position: relative;
   box-sizing: border-box;
   min-height: 56px;
+  justify-content: center;
+  /* Align center horizontally for max-width container layout */
+  max-width: 414px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
-/* RESPONSIVE HEADER HEIGHTS */
+/* Match .todos-list container (see todo-ui.css): */
 @media (max-width: 440px) {
   .appBar {
     height: 72px;
     min-height: 56px;
     border-radius: 0 0 15px 15px;
+    max-width: 100vw;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+@media (min-width: 441px) and (max-width: 767px) {
+  .appBar {
+    height: 100px;
+    max-width: 98vw;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 @media (min-width: 768px) {
@@ -23,26 +42,48 @@
     height: 134px;
     min-height: 88px;
     border-radius: 0 0 20px 20px;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    max-width: 520px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
+
+/* AppBar title matches .todos-list container width and alignment */
 .title {
   color: var(--color-typo-8);
   font-size: var(--font-size-typo-8);
   font-weight: var(--font-weight-typo-8);
   line-height: var(--line-height-typo-8);
-  margin-left: 16px;
-  margin-top: 16px;
   word-break: break-word;
-  max-width: 66vw;
+  box-sizing: border-box;
+  /* 
+    width: 100% with horizontal padding ensures title aligns 
+    with the task list content regardless of flex expansion 
+  */
+  width: 100%;
+  text-align: left;
+  margin-left: 0;
+  margin-top: 16px;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: unset;
   min-width: 0;
   flex: 1 1 auto;
+  display: block;
 }
+
 @media (max-width: 440px) {
   .title {
-    margin-left: 8px;
+    margin-left: 0;
     font-size: 1.08rem;
+    margin-top: 0.7rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (min-width: 441px) and (max-width: 767px) {
+  .title {
+    font-size: 1.28rem;
     margin-top: 0.7rem;
   }
 }
@@ -50,6 +91,8 @@
   .title {
     font-size: 2rem;
     margin-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .rightIcon {
