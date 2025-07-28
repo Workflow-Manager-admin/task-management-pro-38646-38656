@@ -5,6 +5,7 @@
   --app-bg: var(--color-ffffff);
 }
 
+/* Theme colors for dark mode */
 [data-theme="dark"] {
   --bg-primary: #1a1a1a;
   --bg-secondary: #282c34;
@@ -15,15 +16,18 @@
   --button-text: #ffffff;
 }
 
+/* Main app wrapper */
 .App {
   text-align: center;
   background-color: var(--app-bg, var(--color-ffffff));
   color: var(--color-000000);
   min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
+  /* Responsive padding for layout breathing room */
+  padding-bottom: 0;
 }
 
-/* Theme toggle button */
+/* Theme toggle button - basic responsive positioning */
 .theme-toggle {
   position: absolute;
   top: 20px;
@@ -33,59 +37,28 @@
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.10);
   z-index: 1000;
 }
-.theme-toggle:hover {
+.theme-toggle:hover, .theme-toggle:focus {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   opacity: 0.9;
 }
-
-/* Primary content wrapper for the mobile app screen look */
-.screen-frame {
-  max-width: 414px;
-  min-height: 896px;
-  margin: 0 auto;
-  background: var(--color-ffffff);
-  position: relative;
-  box-shadow: var(--shadow-0);
-}
-
-/* Responsive design for mobile */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .theme-toggle {
     top: 10px;
     right: 10px;
-    padding: 8px 16px;
-    font-size: 12px;
-  }
-  .screen-frame {
-    width: 100%;
-    min-height: 100vh;
+    padding: 8px 14px;
+    font-size: 0.81rem;
   }
 }
 
-/* For core container resets (reference index.css as well) */
-.todos-list {
-  padding: var(--spacing-m);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-m);
-  margin-top: var(--spacing-m);
-}
-.todo-item {
+/* Let main .screen-frame size be controlled from todo-ui.css */
+.screen-frame {
   background: var(--color-ffffff);
-  box-shadow: var(--shadow-0);
-  border-radius: var(--radius-m);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--spacing-m);
-  min-height: 82px;
-  margin-bottom: 8px;
 }

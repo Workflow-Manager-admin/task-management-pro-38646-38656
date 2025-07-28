@@ -18,6 +18,39 @@
 .fab:active {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.08);
 }
+
+@media (max-width: 440px) {
+  .fab {
+    width: 54px;
+    height: 54px;
+    right: 12px;
+    bottom: 18px;
+  }
+}
+@media (max-width:370px) {
+  .fab {
+    width: 44px;
+    height: 44px;
+    right: 4px;
+    bottom: 6px;
+  }
+}
+@media (min-width: 441px) and (max-width: 767px) {
+  .fab {
+    width: 62px;
+    height: 62px;
+    right: 20px;
+    bottom: 24px;
+  }
+}
+@media (min-width: 768px) {
+  .fab {
+    width: 76px;
+    height: 76px;
+    right: 30px;
+    bottom: 44px;
+  }
+}
 .plusIcon {
   width: 21px;
   height: 23.6px;

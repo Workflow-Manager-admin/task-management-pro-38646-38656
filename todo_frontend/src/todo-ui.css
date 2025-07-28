@@ -15,59 +15,59 @@
   --font-jost: 'Jost', 'Arial', sans-serif;
 
   --font-typo-6: var(--font-jost);
-  --font-size-typo-6: 10px;
+  --font-size-typo-6: 0.625rem;
   --font-weight-typo-6: 400;
-  --line-height-typo-6: 14.45px;
+  --line-height-typo-6: 1.445rem;
   --color-typo-6: var(--color-9395d3);
 
   --font-typo-7: var(--font-jost);
-  --font-size-typo-7: 10px;
+  --font-size-typo-7: 0.625rem;
   --font-weight-typo-7: 400;
-  --line-height-typo-7: 14.45px;
+  --line-height-typo-7: 1.445rem;
   --color-typo-7: var(--color-8b8787);
 
   --font-typo-8: var(--font-jost);
-  --font-size-typo-8: 24px;
+  --font-size-typo-8: 1.5rem;
   --font-weight-typo-8: 600;
-  --line-height-typo-8: 34.68px;
+  --line-height-typo-8: 2.17rem;
   --color-typo-8: var(--color-ffffff);
 
   --font-typo-9: var(--font-jost);
-  --font-size-typo-9: 13px;
+  --font-size-typo-9: 0.813rem;
   --font-weight-typo-9: 600;
-  --line-height-typo-9: 18.785px;
+  --line-height-typo-9: 1.18rem;
   --color-typo-9: var(--color-9395d3);
 
   --font-typo-10: var(--font-jost);
-  --font-size-typo-10: 10px;
+  --font-size-typo-10: 0.625rem;
   --font-weight-typo-10: 400;
-  --line-height-typo-10: 14.45px;
+  --line-height-typo-10: 0.9rem;
   --color-typo-10: var(--color-000000);
 
   --font-typo-11: var(--font-jost);
-  --font-size-typo-11: 16px;
+  --font-size-typo-11: 1rem;
   --font-weight-typo-11: 400;
-  --line-height-typo-11: 23.12px;
+  --line-height-typo-11: 1.445rem;
   --color-typo-11: var(--color-8b8787);
 
   --font-typo-12: var(--font-jost);
-  --font-size-typo-12: 20px;
+  --font-size-typo-12: 1.25rem;
   --font-weight-typo-12: 600;
-  --line-height-typo-12: 28.9px;
+  --line-height-typo-12: 1.8rem;
   --color-typo-12: var(--color-ffffff);
 
   --font-typo-13: var(--font-jost);
-  --font-size-typo-13: 15px;
+  --font-size-typo-13: 0.938rem;
   --font-weight-typo-13: 400;
-  --line-height-typo-13: 21.675px;
+  --line-height-typo-13: 1.35rem;
   --color-typo-13: var(--color-ffffff);
 
-  /* Spacing tokens (sample selection from design system) */
-  --spacing-xs: 4px;
-  --spacing-s: 8px;
-  --spacing-m: 16px;
-  --spacing-l: 32px;
-  --spacing-xl: 64px;
+  /* Spacing tokens */
+  --spacing-xs: 0.25rem;
+  --spacing-s: 0.5rem;
+  --spacing-m: 1rem;
+  --spacing-l: 2rem;
+  --spacing-xl: 4rem;
 
   /* Border radius */
   --radius-s: 1px;
@@ -81,7 +81,6 @@
   --container-max-width: 414px;
 }
 
-/* ...rest of todo-ui.css unchanged (see assets/todo-ui.css)... */
 body {
   margin: 0;
   padding: 0;
@@ -89,6 +88,8 @@ body {
   font-family: var(--font-jost);
   min-height: 100vh;
 }
+
+/* Responsive container frame */
 .screen-frame {
   max-width: var(--container-max-width);
   min-height: 896px;
@@ -96,8 +97,10 @@ body {
   background: var(--color-ffffff);
   position: relative;
   box-shadow: var(--shadow-0);
+  width: 100%;
 }
-/* HEADER / APPBAR */
+
+/* Responsive AppBar */
 .appBar {
   background: var(--color-9395d3);
   width: 100%;
@@ -107,7 +110,9 @@ body {
   align-items: center;
   position: relative;
   box-sizing: border-box;
+  min-height: 72px;
 }
+
 .appBar-title {
   color: var(--color-typo-8);
   font-size: var(--font-size-typo-8);
@@ -115,13 +120,20 @@ body {
   line-height: var(--line-height-typo-8);
   margin-left: var(--spacing-m);
   margin-top: var(--spacing-m);
+  /* Responsive for header title */
+  word-break: break-word;
+  max-width: 68vw;
+  min-width: 0;
+  flex: 1 1 auto;
 }
+
 .appBar-calendar {
   position: absolute;
   right: var(--spacing-m);
   top: 50%;
   transform: translateY(-50%);
 }
+
 .turn-back-btn {
   position: absolute;
   left: var(--spacing-m);
@@ -131,4 +143,320 @@ body {
   border: none;
   cursor: pointer;
 }
-/* ...and so on (content is verbatim from assets/todo-ui.css)... */
+
+/* Simulated status-bar */
+.status-bar {
+  width: 100%;
+  height: 44px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-000000);
+  padding-left: var(--spacing-m);
+  padding-right: var(--spacing-m);
+}
+
+/* MAIN TASKS LIST */
+.todos-list {
+  padding: var(--spacing-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  margin-top: var(--spacing-m);
+}
+
+.todo-item {
+  background: var(--color-ffffff);
+  box-shadow: var(--shadow-0);
+  border-radius: var(--radius-m);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-m);
+  min-height: 82px;
+  margin-bottom: 8px;
+  transition: box-shadow .2s;
+}
+
+.todo-title-block {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 60%;
+}
+.todo-title {
+  font-size: var(--font-size-typo-9);
+  color: var(--color-typo-9);
+  font-weight: var(--font-weight-typo-9);
+  line-height: var(--line-height-typo-9);
+  margin-bottom: 0;
+  word-break: break-word;
+}
+.todo-subtitle {
+  font-size: var(--font-size-typo-10);
+  color: var(--color-typo-10);
+  line-height: var(--line-height-typo-10);
+  word-break: break-word;
+}
+
+/* Todo item action buttons row */
+.todo-actions {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-s);
+  align-items: center;
+}
+
+.todo-action-btn {
+  width: 25px;
+  height: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.todo-action-btn img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Floating Add ToDo FAB */
+.fab-add-todo {
+  position: fixed;
+  right: 20px;
+  bottom: 32px;
+  width: 70px;
+  height: 70px;
+  background: var(--color-9395d3);
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--shadow-0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.fab-add-todo:active {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.08);
+}
+.fab-add-todo .fab-plus-icon {
+  width: 21px;
+  height: 23.6px;
+  filter: drop-shadow(0 0 2px var(--color-ffffff));
+}
+.navigasiBar {
+  width: 100%;
+  height: 68px;
+  background: var(--color-ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  box-shadow: var(--shadow-0);
+  z-index: 50;
+  margin-bottom: 0;
+}
+
+.navigasiBar .tab {
+  font-size: var(--font-size-typo-6);
+  color: var(--color-typo-6);
+  font-weight: var(--font-weight-typo-6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 var(--spacing-m);
+  transition: color 0.15s;
+  outline: none;
+}
+.navigasiBar .tab.completed {
+  color: var(--color-typo-7);
+}
+.navigasiBar .tab.active {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* ----- ADD/EDIT FORM UI ----- */
+.add-form, .edit-form {
+  padding: var(--spacing-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  max-width: 386px;
+  margin: 0 auto 48px auto;
+}
+
+.input-label {
+  font-size: var(--font-size-typo-11);
+  color: var(--color-typo-11);
+  margin-bottom: 2px;
+}
+.input-text, .input-detail {
+  border: none;
+  border-bottom: 1px solid var(--color-8b8787);
+  background: transparent;
+  font-size: var(--font-size-typo-11);
+  color: var(--color-000000);
+  margin-bottom: var(--spacing-m);
+  outline: none;
+  width: 100%;
+  padding: var(--spacing-xs) 0;
+}
+
+.add-btn, .edit-btn, .cancel-btn {
+  border: none;
+  border-radius: var(--radius-m);
+  font-size: var(--font-size-typo-12);
+  font-weight: var(--font-weight-typo-12);
+  color: var(--color-typo-12);
+  background: var(--color-9395d3);
+  padding: 16px 0;
+  width: 100%;
+  box-shadow: var(--shadow-0);
+  margin-top: var(--spacing-m);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.add-btn:active, .edit-btn:active, .cancel-btn:active {
+  background: var(--color-d6d7ef);
+  color: var(--color-000000);
+}
+.cancel-btn {
+  background: var(--color-8b8787);
+  color: var(--color-ffffff);
+  margin-left: var(--spacing-m);
+}
+
+/* ------------------- RESPONSIVENESS BREAKPOINTS ------------------- */
+
+/* Small Devices/Phones (≤ 440px) */
+@media (max-width: 440px) {
+  html {
+    font-size: 15px;
+  }
+  .screen-frame {
+    border-radius: 0;
+    width: 100vw !important;
+    min-width: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+  .appBar {
+    height: 72px;
+    min-height: 56px;
+    padding-left: var(--spacing-s);
+    padding-right: var(--spacing-s);
+    border-radius: 0 0 var(--radius-m) var(--radius-m);
+  }
+  .appBar-title {
+    margin-left: var(--spacing-s);
+    font-size: 1.08rem;
+    margin-top: 0.7rem;
+  }
+  .navigasiBar {
+    height: 56px;
+    min-height: 48px;
+    border-radius: var(--radius-m) var(--radius-m) 0 0;
+  }
+  .fab-add-todo {
+    width: 54px;
+    height: 54px;
+    right: 14px;
+    bottom: 18px;
+  }
+  .todos-list {
+    padding: var(--spacing-s);
+    gap: var(--spacing-s);
+  }
+  .todo-item {
+    min-height: 60px;
+    padding: var(--spacing-s);
+    font-size: 0.85rem;
+  }
+  .add-form, .edit-form {
+    padding: var(--spacing-m);
+    max-width: 96vw;
+  }
+}
+
+/* Tablets (441px - 767px) */
+@media (min-width: 441px) and (max-width: 767px) {
+  html {
+    font-size: 16px;
+  }
+  .screen-frame {
+    max-width: 98vw;
+    /* keeps side margins minimal */
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-0);
+  }
+  .appBar { height: 100px; }
+  .appBar-title {
+    font-size: 1.28rem;
+  }
+  .todos-list { gap: 1.1rem; }
+  .todo-item { min-height: 74px; font-size: 0.92rem; }
+  .fab-add-todo {
+    width: 62px; height: 62px;
+    right: 24px; bottom: 28px;
+  }
+  .add-form, .edit-form { max-width: 95vw; }
+  .navigasiBar { height: 60px; }
+}
+
+/* Desktop (≥768px) */
+@media (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+  .screen-frame {
+    max-width: 520px;
+    min-width: 320px;
+    border-radius: var(--radius-l);
+    padding: var(--spacing-l) 0;
+    box-shadow: var(--shadow-0);
+  }
+  .appBar {
+    height: 134px;
+    min-height: 88px;
+    padding-left: var(--spacing-l);
+    padding-right: var(--spacing-l);
+  }
+  .appBar-title {
+    font-size: 2rem;
+    margin-top: var(--spacing-xs);
+  }
+  .todos-list { gap: 1.5rem; }
+  .todo-item { min-height: 88px; padding: 1.3rem; }
+  .fab-add-todo {
+    width: 76px; height: 76px;
+    right: 30px; bottom: 44px;
+  }
+  .add-form, .edit-form { padding: var(--spacing-l) var(--spacing-xl); max-width: 520px; }
+  .navigasiBar { height: 68px; }
+}
+
+/* Hide fixed NavigasiBar for large screens/side-by-side layouts (optional) */
+@media (min-width: 1200px) {
+  .screen-frame { max-width: 600px; }
+  .appBar { font-size: 1.2rem; }
+  .navigasiBar { left: 50%; transform: translateX(-50%); max-width: 440px;}
+}
+
+/* Ensure main always leaves space for nav bar on mobile (esp. iOS browser) */
+@media (max-width: 767px) {
+  .todos-list {
+    margin-bottom: 80px;
+  }
+}
+
+/* Extra protection for always visible FAB */
+@media (max-width: 370px) {
+  .fab-add-todo { width: 44px; height: 44px; right: 6px; }
+}

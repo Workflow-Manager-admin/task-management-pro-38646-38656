@@ -14,6 +14,27 @@
   z-index: 50;
   margin-bottom: 0;
 }
+@media (max-width: 440px) {
+  .navigasiBar {
+    height: 56px;
+    min-height: 48px;
+    border-radius: 15px 15px 0 0;
+  }
+}
+@media (min-width: 441px) and (max-width: 767px) {
+  .navigasiBar {
+    height: 60px;
+  }
+}
+@media (min-width: 768px) {
+  .navigasiBar {
+    height: 68px;
+    max-width: 440px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px 20px 0 0;
+  }
+}
 .tab {
   font-size: var(--font-size-typo-6);
   color: var(--color-typo-6);
@@ -24,6 +45,13 @@
   padding: 0 16px;
   outline: none;
   transition: color 0.15s;
+  border-radius: 10px;
+}
+@media (max-width: 440px) {
+  .tab {
+    font-size: 0.83rem;
+    padding: 0 8px;
+  }
 }
 .tab.completed {
   color: var(--color-typo-7);

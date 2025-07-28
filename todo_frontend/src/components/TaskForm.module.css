@@ -7,6 +7,20 @@
   margin: 0 auto 48px auto;
 }
 
+@media (max-width: 440px) {
+  .form {
+    padding: 16px;
+    max-width: 98vw;
+    gap: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .form {
+    padding: 32px 64px;
+    max-width: 520px;
+  }
+}
+
 .label {
   font-size: var(--font-size-typo-11);
   color: var(--color-typo-11);
@@ -28,6 +42,12 @@
   gap: 16px;
   justify-content: center;
   margin-top: 32px;
+}
+@media (max-width: 440px) {
+  .buttonsRow {
+    gap: 8px;
+    margin-top: 20px;
+  }
 }
 
 .submitBtn {
@@ -67,4 +87,13 @@
 .cancelBtn:focus {
   background: var(--color-d6d7ef);
   color: var(--color-000000);
+}
+
+@media (max-width: 440px) {
+  .submitBtn,
+  .cancelBtn {
+    width: 110px;
+    padding: 12px 0;
+    font-size: 1rem;
+  }
 }

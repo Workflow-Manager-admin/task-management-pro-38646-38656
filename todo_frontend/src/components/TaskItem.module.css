@@ -10,20 +10,38 @@
   margin-bottom: 8px;
   outline: none;
 }
+
+@media (max-width: 440px) {
+  .todoItem {
+    min-height: 60px;
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 768px) {
+  .todoItem {
+    min-height: 88px;
+    padding: 1.3rem;
+  }
+}
 .todoTitleBlock {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  flex: 1 1 60%;
 }
 .todoTitle {
   font-size: var(--font-size-typo-9);
   color: var(--color-typo-9);
   font-weight: var(--font-weight-typo-9);
   line-height: var(--line-height-typo-9);
+  word-break: break-word;
 }
 .todoSubtitle {
   font-size: var(--font-size-typo-10);
   color: var(--color-typo-10);
   line-height: var(--line-height-typo-10);
+  word-break: break-word;
 }
 .todoActions {
   display: flex;
